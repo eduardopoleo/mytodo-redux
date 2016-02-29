@@ -35,3 +35,11 @@ export const addProject = (name, description) => {
     description: description
   };
 };
+
+export const updateProjectForm = (text, id) => {
+  return {
+    type: 'UPDATE_PROJECT_FORM' ,
+    text: text,
+    id: id
+  };
+};

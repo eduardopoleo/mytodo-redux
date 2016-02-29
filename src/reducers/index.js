@@ -1,3 +1,5 @@
+import {find} from 'lodash'
+
 export const form = (state={}, action) => {
   switch (action.type) {
     case 'UPDATE_FORM_NAME':
@@ -26,6 +28,14 @@ export const form = (state={}, action) => {
   }
 }
 
+const findProjectbyId = (projects, id) => {
+  return(
+    find(projects, (p) => {
+      id === p.id
+    })
+  )
+}
+
 export const projects = (state=[], action) => {
   switch (action.type) {
     case 'ADD_PROJECT':
@@ -38,6 +48,18 @@ export const projects = (state=[], action) => {
             description: action.description,
             todos: []
           }
+        ]
+      )
+    case 'UPDATE_PROJECT_TODO_FORM':
+    let project = findProjectbyId(state, action.id)
+      return(
+        [
+          ...state.slice(0, action.id),
+          {
+            ...project,
+            formValue: action.text
+          },
+          ...state.slice(action.id + 1)
         ]
       )
     default:

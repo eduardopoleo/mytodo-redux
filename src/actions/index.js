@@ -20,3 +20,10 @@ export const updateFormName = (text) => {
     text: text
   };
 };
+
+export const updateFormDescription = (text) => {
+  return {
+    type: 'UPDATE_FORM_DESCRIPTION' ,
+    text: text
+  };
+};

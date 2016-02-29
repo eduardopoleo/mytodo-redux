@@ -1,10 +1,19 @@
 export const form = (state=[], action) => {
   switch (action.type) {
     case 'UPDATE_FORM_NAME':
+    console.log("state", state, "action", action)
       return(
         {
           ...state,
-          name: action.name
+          name: action.text
+        }
+      )
+    case 'UPDATE_FORM_DESCRIPTION':
+    console.log("state", state, "action", action)
+      return(
+        {
+          ...state,
+          description: action.text
         }
       )
     default:
@@ -20,6 +29,7 @@ const projectApp = combineReducers({
 
 export default projectApp
 
+// console.log("state", state, "action", action)
 
 // [
 //   {

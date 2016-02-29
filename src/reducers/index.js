@@ -37,6 +37,7 @@ const findProjectbyId = (projects, id) => {
 }
 
 export const projects = (state=[], action) => {
+  let project = findProjectbyId(state, action.id)
   switch (action.type) {
     case 'ADD_PROJECT':
       return(
@@ -51,14 +52,26 @@ export const projects = (state=[], action) => {
         ]
       )
     case 'UPDATE_PROJECT_FORM':
-    let project = findProjectbyId(state, action.id)
-    console.log(state, action)
       return(
         [
           ...state.slice(0, action.id),
           {
             ...project,
             formValue: action.text
+          },
+          ...state.slice(action.id + 1)
+        ]
+      )
+    case 'ADD_PROJECT_TODO':
+      return(
+        [
+          ...state.slice(0, action.id),
+          {
+            ...project,
+            todos: [
+              ...project.todos,
+              action.todo
+            ]
           },
           ...state.slice(action.id + 1)
         ]

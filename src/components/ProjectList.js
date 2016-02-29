@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Project from './Project'
 
-const ProjectList = ({projects, onFormChange}) => (
+const ProjectList = ({projects, onFormChange, onAddProjectTodo}) => (
   <div>
     <div>
       { projects.map((project, index)=>{
@@ -11,7 +11,8 @@ const ProjectList = ({projects, onFormChange}) => (
                      name={project.name}
                      description={project.description}
                      formValue={project.formValue}
-                     onFormChange={onFormChange}>
+                     onFormChange={onFormChange}
+                     onAddProjectTodo={onAddProjectTodo}>
             </Project>
           )
         })

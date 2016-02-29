@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ProjectList from '../components/ProjectList'
-import { updateProjectForm } from '../actions'
+import { updateProjectForm, addProjectTodo } from '../actions'
 
 const initState = [
     {
@@ -19,6 +19,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onFormChange: (id, event) => {
       dispatch(updateProjectForm(event.target.value, id))
+    },
+    onAddProjectTodo: (todo, id) => {
+      dispatch(addProjectTodo(todo, id))
     }
   }
 }

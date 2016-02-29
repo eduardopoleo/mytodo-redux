@@ -43,3 +43,11 @@ export const updateProjectForm = (text, id) => {
     id: id
   };
 };
+
+export const addProjectTodo = (todo, id) => {
+  return {
+    type: 'ADD_PROJECT_TODO' ,
+    todo: todo,
+    id: id
+  };
+};

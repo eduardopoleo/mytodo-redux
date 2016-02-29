@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-const Form = ({name, onChangeName}) => (
+const Form = ({name, onNameChange}) => (
   <div>
-    <input value={name} onChange={onChangeName} type='text' placeholder='name'/>
+    <input value={name} onChange={onNameChange} type='text' placeholder='name'/>
   </div>
 )
 

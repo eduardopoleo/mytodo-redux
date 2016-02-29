@@ -17,8 +17,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChangeName: (text) => {
-      dispatch(updateFormName(text))
+    onNameChange: (event) => {
+      dispatch(updateFormName(event.target.value))
     }
   }
 }

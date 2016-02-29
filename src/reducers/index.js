@@ -30,8 +30,8 @@ export const form = (state={}, action) => {
 
 const findProjectbyId = (projects, id) => {
   return(
-    find(projects, (p) => {
-      id === p.id
+    find(projects, (item) => {
+      return id === item.id;
     })
   )
 }
@@ -50,8 +50,9 @@ export const projects = (state=[], action) => {
           }
         ]
       )
-    case 'UPDATE_PROJECT_TODO_FORM':
+    case 'UPDATE_PROJECT_FORM':
     let project = findProjectbyId(state, action.id)
+    console.log(state, action)
       return(
         [
           ...state.slice(0, action.id),

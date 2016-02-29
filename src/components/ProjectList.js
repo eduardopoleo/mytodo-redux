@@ -7,6 +7,7 @@ const ProjectList = ({projects, onFormChange}) => (
       { projects.map((project, index)=>{
           return(
             <Project key={index}
+                     id={index}
                      name={project.name}
                      description={project.description}
                      formValue={project.formValue}

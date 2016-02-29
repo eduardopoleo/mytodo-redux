@@ -1,4 +1,8 @@
 // [
+//   form: {
+//     name:,
+//     description:,
+//   },
 //   Projects: {
 //     id,
 //     name,
@@ -10,10 +14,9 @@
 //   }
 // ]
 
-export const addProject = (name, description) => {
+export const updateFormName = (text) => {
   return {
-    type: 'ADD_PROJECT' ,
-    name: name,
-    description: description
+    type: 'UPDATE_FORM_NAME' ,
+    text: text
   };
 };

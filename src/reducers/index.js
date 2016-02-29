@@ -1,29 +1,26 @@
-let nextProject = 0;
-export const Project = (state={}, action) => {
+export const form = (state=[], action) => {
   switch (action.type) {
-    case 'ADD_PROJECT':
-      [
-        ...state,
+    case 'UPDATE_FORM_NAME':
+      return(
         {
-          id: nextProject++,
-          name: action.name,
-          description: action.description,
-          todos: []
+          ...state,
+          name: action.name
         }
-      ]
+      )
     default:
       return state
   }
 }
 
 import { combineReducers } from 'redux'
-
+//Combine reducer will wrap the state in an object
 const projectApp = combineReducers({
-  Project
+  form
 })
 
-//Why can't I just export the reducer it self why I need to combine it?
 export default projectApp
+
+
 // [
 //   {
 //     id,

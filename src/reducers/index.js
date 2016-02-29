@@ -63,6 +63,7 @@ export const projects = (state=[], action) => {
         ]
       )
     case 'ADD_PROJECT_TODO':
+      console.log(state, action)
       return(
         [
           ...state.slice(0, action.id),

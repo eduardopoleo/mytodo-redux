@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const Project = ({name, description, formValue, onFormChange, id, onAddProjectTodo}) => (
+const Project = ({name, description, formValue, todos, id, onFormChange, onAddProjectTodo}) => (
   <div>
     <div>
       <h1>{name}</h1>
@@ -10,6 +10,14 @@ const Project = ({name, description, formValue, onFormChange, id, onAddProjectTo
       <button type='submit' onClick={onAddProjectTodo.bind(this, formValue, id)}>
         Add todo
       </button>
+      <ul>
+        { todos.map((t) => {
+            return (
+              <li> {t} </li>
+            )
+          })
+        }
+      </ul>
     </div>
   </div>
 )

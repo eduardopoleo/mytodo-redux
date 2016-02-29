@@ -12,7 +12,8 @@ const ProjectList = ({projects, onFormChange, onAddProjectTodo}) => (
                      description={project.description}
                      formValue={project.formValue}
                      onFormChange={onFormChange}
-                     onAddProjectTodo={onAddProjectTodo}>
+                     onAddProjectTodo={onAddProjectTodo}
+                     todos={project.todos}>
             </Project>
           )
         })

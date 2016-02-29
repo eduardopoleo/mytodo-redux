@@ -72,7 +72,8 @@ export const projects = (state=[], action) => {
             todos: [
               ...project.todos,
               action.todo
-            ]
+            ],
+            formValue: ""
           },
           ...state.slice(action.id + 1)
         ]

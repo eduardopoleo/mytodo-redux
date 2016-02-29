@@ -1,4 +1,4 @@
-export const form = (state=[], action) => {
+export const form = (state={}, action) => {
   switch (action.type) {
     case 'UPDATE_FORM_NAME':
       return (
@@ -33,6 +33,7 @@ export const projects = (state=[], action) => {
         [
           ...state,
           {
+            id: state.length,
             name: action.name,
             description: action.description,
             todos: []
@@ -44,10 +45,7 @@ export const projects = (state=[], action) => {
   }
 }
 
-
-
 import { combineReducers } from 'redux'
-//Combine reducer will wrap the state in an object
 const projectApp = combineReducers({
   form,
   projects

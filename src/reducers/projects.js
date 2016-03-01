@@ -51,6 +51,11 @@ const projects = (state=[], action) => {
           ...state.slice(action.id + 1)
         ]
       )
+    case 'FETCH_PROJECTS':
+      debugger;
+      return(
+          null
+      )
     default:
       return state
   }

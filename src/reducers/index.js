@@ -8,16 +8,3 @@ const projectApp = combineReducers({
 })
 
 export default projectApp;
-
-
-// [
-//   {
-//     id,
-//     name,
-//     description
-//     todos :{
-//       taks
-//       deadline
-//     }
-//   }
-// ]

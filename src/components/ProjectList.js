@@ -1,8 +1,11 @@
 import React, { PropTypes } from 'react';
 import Project from './Project'
 
-const ProjectList = ({projects, onFormChange, onAddProjectTodo}) => (
+const ProjectList = ({projects, onFormChange, onAddProjectTodo, fetchProjects}) => (
   <div>
+    <button onClick={fetchProjects}>
+      Fetch challenges
+    </button>
     <div>
       { projects.map((project, index)=>{
           return(

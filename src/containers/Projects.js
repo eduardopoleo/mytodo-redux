@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import ProjectList from '../components/ProjectList'
 import { updateProjectForm, addProjectTodo } from '../actions'
+import fetchProjects from '../utils/async'
 
 const initState = [
     {
@@ -22,7 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     },
     onAddProjectTodo: (todo, id) => {
       dispatch(addProjectTodo(todo, id))
-    }
+    },
+    fetchProjects: fetchProjects(dispatch)
   }
 }
 

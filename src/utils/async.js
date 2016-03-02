@@ -7,6 +7,6 @@ export default function fetchProjects(dispatch) {
       dataType: "json",
       xhrFields: { withCredentials: false}
     }).success(function(data){
-      return dispatch({type:'FETCH_PROJECTS', data: data});
+      return dispatch({type:'FETCH_PROJECTS', projects: data.projects});
     });
 }

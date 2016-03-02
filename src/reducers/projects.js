@@ -52,7 +52,9 @@ const projects = (state=[], action) => {
       )
     case 'FETCH_PROJECTS':
       return(
-          state
+        [
+          ...action.projects
+        ]
       )
     default:
       return state

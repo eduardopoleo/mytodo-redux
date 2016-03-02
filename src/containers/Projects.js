@@ -24,7 +24,9 @@ const mapDispatchToProps = (dispatch) => {
     onAddProjectTodo: (todo, id) => {
       dispatch(addProjectTodo(todo, id))
     },
-    fetchProjects: fetchProjects(dispatch)
+    fetchProjects: () => {
+      fetchProjects(dispatch)
+    }
   }
 }
 

@@ -36,7 +36,6 @@ const projects = (state=[], action) => {
         ]
       )
     case 'ADD_PROJECT_TODO':
-      console.log(state, action)
       return(
         [
           ...state.slice(0, action.id),
@@ -52,9 +51,8 @@ const projects = (state=[], action) => {
         ]
       )
     case 'FETCH_PROJECTS':
-      debugger;
       return(
-          null
+          state
       )
     default:
       return state

@@ -10,18 +10,17 @@ const findProjectbyId = (projects, id) => {
 
 const projects = (state=[], action) => {
   let project = findProjectbyId(state, action.id)
-
   switch (action.type) {
-    case 'ADD_PROJECT':
+    case 'CREATE_PROJECT':
       return(
         [
-          ...state,
           {
-            id: state.length,
-            name: action.name,
-            description: action.description,
-            todos: []
-          }
+            id: action.project.id,
+            name: action.project.name,
+            description: action.project.description,
+            todos: action.project.todos
+          },
+          ...state
         ]
       )
     case 'UPDATE_PROJECT_FORM':

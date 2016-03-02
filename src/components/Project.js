@@ -13,7 +13,7 @@ const Project = ({name, description, formValue, todos, id, onFormChange, onAddPr
       <ul>
         { todos.map((t) => {
             return (
-              <li> {t.text} </li>
+              <li> {t} </li>
             )
           })
         }

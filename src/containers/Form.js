@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { updateFormName, updateFormDescription, addProject } from '../actions'
 import Form from '../components/Form'
+import createProject  from '../async/createProject'
 
 const mapStateToProps = (state) => {
   return {
@@ -18,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(updateFormDescription(event.target.value))
     },
     onAddProject: (name, description) => {
-      dispatch(addProject(name, description))
+      createProject(dispatch, name, description)
     }
   }
 }
